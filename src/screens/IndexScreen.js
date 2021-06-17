@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { View,Text,StyleSheet,FlatList,Button } from 'react-native';
+import { View,Text,StyleSheet,FlatList,Button,TouchableOpacity } from 'react-native';
 import {Context as BlogContext } from '../context/BlogContext';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
@@ -14,8 +14,10 @@ const IndexScreen = () => {
   keyExtractor={blogPost =>blogPost.title} 
   renderItem={({ item }) =>{
     return <View style={styles.row}>
-      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.title}>{item.title}-{item.id}</Text>
+      <TouchableOpacity onPress={()=> console.log(item.id)}>
       <FontAwesome5 style={styles.icon} name="trash"    />
+      </TouchableOpacity>
       </View>;
   }}/>
 </View>
