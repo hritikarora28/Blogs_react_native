@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import { View,Text,StyleSheet,FlatList,Button,TouchableOpacity } from 'react-native';
 import {Context as BlogContext } from '../context/BlogContext';
 import { FontAwesome5 } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons'; 
 
 const IndexScreen = ({navigation}) => {
   
@@ -26,6 +27,12 @@ const IndexScreen = ({navigation}) => {
     }}/>
 </View>
   
+}
+
+IndexScreen.navigationOptions = ({navigation}) => {
+  return {
+    headerRight:<TouchableOpacity onPress={()=>navigation.navigate('Create')}><Feather name="plus" size={30}/></TouchableOpacity> 
+  };
 }
 
 const styles = StyleSheet.create({
