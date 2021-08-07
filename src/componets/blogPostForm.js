@@ -19,7 +19,13 @@ const BlogPostForm = ({onSubmit, intitialValues}) =>{
 		</View>
 	);
 
-}
+};
+BlogPostForm.defaultProps = {
+	intitialValues:{
+		title:'',
+		content:''
+	}
+};
 
 const styles = StyleSheet.create({
 
